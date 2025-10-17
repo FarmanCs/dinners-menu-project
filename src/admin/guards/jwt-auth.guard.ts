@@ -1,9 +1,3 @@
-// import { Injectable } from '@nestjs/common';
-// import { AuthGuard } from '@nestjs/passport';
-
-// @Injectable()
-// export class JwtAuthGuard extends AuthGuard('jwt') {}
-
 import {
   Injectable,
   CanActivate,
@@ -21,10 +15,8 @@ export class JwtAuthGuard implements CanActivate {
   ) {}
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const request = context.switchToHttp().getRequest();
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     const authHeader = request.headers.authorization;
     if (!authHeader) {
       throw new UnauthorizedException('Authorization header missing');

@@ -31,7 +31,6 @@ export class RolesGuard implements CanActivate {
       return false;
     }
 
-    // Assuming role has a 'name' field
     const userRoleName = (user.role as any).name;
     return requiredRoles.some((role) => userRoleName === role);
   }

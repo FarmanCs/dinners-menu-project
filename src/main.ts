@@ -9,8 +9,8 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }));
 
   const config = new DocumentBuilder()
-    .setTitle('Admin API')
-    .setDescription('Admin Management Endpoints')
+    .setTitle(`Dinner's menu`)
+    .setDescription('Dinner Menu complete api doc')
     .setVersion('1.0')
     .addBearerAuth()
     .build();
@@ -19,6 +19,6 @@ async function bootstrap() {
   SwaggerModule.setup('api', app, document);
 
   await app.listen(3000);
-  console.log(`🚀 Server running on http://localhost:3000/api`);
+  console.log(` Server running on http://localhost:3000/api`);
 }
 bootstrap();

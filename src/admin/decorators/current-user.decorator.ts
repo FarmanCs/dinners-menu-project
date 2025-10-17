@@ -8,10 +8,3 @@ export const CurrentUser = createParamDecorator(
     return data ? user?.[data] : user;
   },
 );
-
-// Usage example in controller:
-// @Get('profile')
-// @UseGuards(JwtAuthGuard)
-// getProfile(@CurrentUser() user: any) {
-//   return this.adminService.getProfile(user.sub);
-// }
